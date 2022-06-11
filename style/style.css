@@ -1,0 +1,116 @@
+/*=== HEADER ===*/
+
+header{
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    justify-content: center;
+}
+h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    color: purple;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2{
+    font-family: 'Raleway', sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+/*=== MAIN ===*/
+
+.circle{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.circlesWrapper{
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 100px);
+    row-gap: 25px;
+    column-gap: 25px;
+    justify-content: center;
+    align-content: center;
+    grid-template-areas: 
+    ". . . augmented4 augmented5 . . ."
+    ". major2 major3 . . major6 major7 ."
+    "root . . perfect4 perfect5 . . octave"
+    ". minor2 minor3 . . minor6 minor7 ."
+    ". . . diminished4 diminished5 . . .";
+}
+.root{ grid-area: root }
+.minor2{ grid-area: minor2 }
+.major2{ grid-area: major2 }
+.minor3{ grid-area: minor3 }
+.major3{ grid-area: major3 }
+.diminished4{ grid-area: diminished4 }
+.perfect4{ grid-area: perfect4 }
+.augmented4{ grid-area: augmented4 }
+.diminished5{ grid-area: diminished5 }
+.perfect5{ grid-area: perfect5 }
+.augmented5{ grid-area: augmented5 }
+.minor6{ grid-area: minor6 }
+.major6{ grid-area: major6 }
+.minor7{ grid-area: minor7 }
+.major7{ grid-area: major7 }
+.octave{ grid-area: octave }
+.root, .minor2, .major2, .minor3, .major3, .diminished4, .perfect4, 
+.augmented4, .diminished5, .perfect5, .augmented5, .minor6, .major6,
+.minor7, .major7, .octave{ 
+    justify-self: center;
+    align-self: center;
+}
+.keyPick, .modePick{
+    display: flex;
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.key{
+    width: 50px;
+    height: 50px;
+}
+.mode{
+    width: fit-content;
+    height: 50px;
+}
+.keyTitle, .modeTitle{
+    width: fit-content;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+/*=== FOOTER ===*/
+
+footer{
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+footer p{
+    justify-self: center;
+}
