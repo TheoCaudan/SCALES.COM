@@ -2,8 +2,9 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Scales.com</title>
-	<meta name="viewport" content="width=device-width", initial-scale="1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="icon" href="img/note.ico"/>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,24 +18,6 @@
 		<h2>Find the notes of the mode in the key you pick and display it on the fretboard</h2>
 	</header>
 	<main>
-		<div class="circlesWrapper">
-			<div class="circle" id="root"></div>
-			<div class="circle" id="minor2"></div>
-			<div class="circle" id="major2"></div>
-			<div class="circle" id="minor3"></div>
-			<div class="circle" id="major3"></div>
-			<div class="circle" id="diminished4"></div>
-			<div class="circle" id="perfect4"></div>
-			<div class="circle" id="augmented4"></div>
-			<div class="circle" id="diminished5"></div>
-			<div class="circle" id="perfect5"></div>
-			<div class="circle" id="augmented5"></div>
-			<div class="circle" id="minor6"></div>
-			<div class="circle" id="major6"></div>
-			<div class="circle" id="minor7"></div>
-			<div class="circle" id="major7"></div>
-			<div class="circle" id="octave"></div>
-		</div>
 		<h2 class="keyTitle">Pick a key</h2>
 		<div class="keyPick">
 			<button class="key" id="keyA" onclick="displayNotes('A')">A</button>
@@ -60,6 +43,120 @@
 			<button class="mode modeMinor" id="modeAeolian" onclick="displayMode('Aeolian')">Aeolian</button>
 			<button class="mode modeMinor" id="modeLocrian" onclick="displayMode('Locrian')">Locrian</button>
 		</div>
+		<h2 class="instrumentTitle">Pick an instrument</h2>
+		<div class="instrumentPick">
+			<button class="instrument" id="guitar" onclick="displayGuitar()">Guitar fretboard</button>
+			<button class="instrument" id="bass" onclick="displayBass()">Bass fretboard</button>
+			<button class="instrument" id="keyboard" onclick="displayKeyboard()">Keyboard</button>
+		</div>
+		<div class="instrumentsContainer">
+			<div class="divTable">
+				<div class="divTableBody">
+					<div class="divTableRow">
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+					</div>
+					<div class="divTableRow">
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+					</div>
+					<div class="divTableRow">
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+					</div>
+					<div class="divTableRow">
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+					</div>
+					<div class="divTableRow">
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+					</div>
+					<div class="divTableRow">
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+						<div class="divTableCell"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="circlesWrapper">
+			<div class="circle" id="root"></div>
+			<div class="circle" id="minor2"></div>
+			<div class="circle" id="major2"></div>
+			<div class="circle" id="minor3"></div>
+			<div class="circle" id="major3"></div>
+			<div class="circle" id="diminished4"></div>
+			<div class="circle" id="perfect4"></div>
+			<div class="circle" id="augmented4"></div>
+			<div class="circle" id="diminished5"></div>
+			<div class="circle" id="perfect5"></div>
+			<div class="circle" id="augmented5"></div>
+			<div class="circle" id="minor6"></div>
+			<div class="circle" id="major6"></div>
+			<div class="circle" id="minor7"></div>
+			<div class="circle" id="major7"></div>
+			<div class="circle" id="octave"></div>
+		</div> -->
 	</main>
 	<footer>
 	</footer>

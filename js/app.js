@@ -14,9 +14,14 @@ const perfForth = document.querySelector("#perfect4")
 const perfFifth = document.querySelector("#perfect5")
 const augForth = document.querySelector("#augmented4")
 const augFifth = document.querySelector("#augmented5")
+const instrument = document.querySelector(".instrumentsContainer")
+
+let keyPicked = ''
+let modePicked = ''
 
 let displayNotes = (key) => {
     root.textContent = key
+    keyPicked = key
     switch(root.textContent) {
         case 'A' :
             minorSecond.textContent = 'A#/Bb'
@@ -191,6 +196,7 @@ let displayNotes = (key) => {
     }
 } 
 let displayMode = (mode) => {
+    modePicked = mode
     switch(mode) {
         case 'Ionian' :
             root.style.backgroundColor = 'purple'
@@ -431,4 +437,16 @@ let displayMode = (mode) => {
             octave.style.color = 'white'
         break;
     }
+}
+let displayGuitar = () => {
+    const guitar = document.createElement("div")
+    guitar.class = "guitar"
+
+    instrument.append(guitar)
+}
+let displayBass = () => {
+
+}
+let displayKeyboard = () => {
+
 }
