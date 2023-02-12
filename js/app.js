@@ -1,452 +1,382 @@
-const root = document.querySelector("#root")
-const octave = document.querySelector("#octave")
-const minorSecond = document.querySelector("#minor2")
-const minorThird = document.querySelector("#minor3")
-const minorSixth = document.querySelector("#minor6")
-const minorSeventh = document.querySelector("#minor7")
-const majorSecond = document.querySelector("#major2")
-const majorThird = document.querySelector("#major3")
-const majorSixth = document.querySelector("#major6")
-const majorSeventh = document.querySelector("#major7")
-const dimForth = document.querySelector("#diminished4")
-const dimFifth = document.querySelector("#diminished5")
-const perfForth = document.querySelector("#perfect4")
-const perfFifth = document.querySelector("#perfect5")
-const augForth = document.querySelector("#augmented4")
-const augFifth = document.querySelector("#augmented5")
-const instrument = document.querySelector(".instrumentsContainer")
+import scales from './scales.js';
 
-let keyPicked = ''
-let modePicked = ''
+let arr = scales;
 
-let displayNotes = (key) => {
-    root.textContent = key
-    keyPicked = key
-    switch(root.textContent) {
-        case 'A' :
-            minorSecond.textContent = 'A#/Bb'
-            majorSecond.textContent = 'B'
-            minorThird.textContent = 'C'
-            majorThird.textContent = dimForth.textContent = 'C#/Db'
-            perfForth.textContent = 'D'
-            augForth.textContent = dimFifth.textContent = 'D#/Eb'
-            perfFifth.textContent = 'E'
-            augFifth.textContent = minorSixth.textContent = 'F'
-            majorSixth.textContent = 'F#/Gb'
-            minorSeventh.textContent = 'G'
-            majorSeventh.textContent = 'G#/Ab'
-            octave.textContent = 'A'
-        break;
-        case 'A#/Bb' :
-            minorSecond.textContent = 'B'
-            majorSecond.textContent = 'C' 
-            minorThird.textContent = 'C#/Db'
-            majorThird.textContent = dimForth.textContent = 'D'
-            perfForth.textContent = 'D#/Eb'
-            augForth.textContent = dimFifth.textContent = 'E'
-            perfFifth.textContent = 'F'
-            augFifth.textContent = minorSixth.textContent = 'F#/Gb'
-            majorSixth.textContent = 'G'
-            minorSeventh.textContent = 'G#/Ab'
-            majorSeventh.textContent = 'A'
-            octave.textContent = 'A#/Bb'
-        break;
-        case 'B' :
-            minorSecond.textContent = 'C'
-            majorSecond.textContent = 'C#/Db'  
-            minorThird.textContent = 'D'
-            majorThird.textContent = dimForth.textContent = 'D#/Eb'
-            perfForth.textContent = 'E'
-            augForth.textContent = dimFifth.textContent = 'F'
-            perfFifth.textContent = 'F#/Gb'
-            augFifth.textContent = minorSixth.textContent = 'G'
-            majorSixth.textContent = 'G#/Ab'
-            minorSeventh.textContent = 'A'
-            majorSeventh.textContent = 'A#/Bb'
-            octave.textContent = 'B'
-        break;
-        case 'C' :
-            minorSecond.textContent = 'C#/Db'
-            majorSecond.textContent = 'D'  
-            minorThird.textContent = 'D#/Eb'
-            majorThird.textContent = dimForth.textContent = 'E'
-            perfForth.textContent = 'F'
-            augForth.textContent = dimFifth.textContent = 'F#/Gb'
-            perfFifth.textContent = 'G'
-            augFifth.textContent = minorSixth.textContent = 'G#/Ab'
-            majorSixth.textContent = 'A'
-            minorSeventh.textContent = 'A#/Bb'
-            majorSeventh.textContent = 'B'
-            octave.textContent = 'C'
-        break;
-        case 'C#/Db' :
-            minorSecond.textContent = 'D'
-            majorSecond.textContent = 'D#/Eb'   
-            minorThird.textContent = 'E'
-            majorThird.textContent = dimForth.textContent = 'F' 
-            perfForth.textContent = 'F#/Gb'
-            augForth.textContent = dimFifth.textContent = 'G' 
-            perfFifth.textContent = 'G#/Ab'
-            augFifth.textContent = minorSixth.textContent = 'A' 
-            majorSixth.textContent = 'A#/Bb'
-            minorSeventh.textContent = 'B'
-            majorSeventh.textContent = 'C'
-            octave.textContent = 'C#/Db'
-        break;
-        case 'D' :
-            minorSecond.textContent = 'D#/Eb'
-            majorSecond.textContent = 'E'    
-            minorThird.textContent = 'F'
-            majorThird.textContent = dimForth.textContent = 'F#/Gb'  
-            perfForth.textContent = 'G'
-            augForth.textContent = dimFifth.textContent = 'G#/Ab'  
-            perfFifth.textContent = 'A'
-            augFifth.textContent = minorSixth.textContent = 'A#/Bb' 
-            majorSixth.textContent = 'B'
-            minorSeventh.textContent = 'C'
-            majorSeventh.textContent = 'C#/Db'
-            octave.textContent = 'D'
-        break;
-        case 'D#/Eb' :
-            minorSecond.textContent = 'E'
-            majorSecond.textContent = 'F'     
-            minorThird.textContent = 'F#/Gb'
-            majorThird.textContent = dimForth.textContent = 'G'   
-            perfForth.textContent = 'G#/Ab'
-            augForth.textContent = dimFifth.textContent = 'A'   
-            perfFifth.textContent = 'A#/Bb'
-            augFifth.textContent = minorSixth.textContent = 'B'  
-            majorSixth.textContent = 'C'
-            minorSeventh.textContent = 'C#/Db'
-            majorSeventh.textContent = 'D'
-            octave.textContent = 'D#/Eb'
-        break;
-        case 'E' :
-            minorSecond.textContent = 'F'
-            majorSecond.textContent = 'F#/Gb'     
-            minorThird.textContent = 'G'
-            majorThird.textContent = dimForth.textContent = 'G#/Ab'    
-            perfForth.textContent = 'A'
-            augForth.textContent = dimFifth.textContent = 'A#/Bb'    
-            perfFifth.textContent = 'B'
-            augFifth.textContent = minorSixth.textContent = 'C'   
-            majorSixth.textContent = 'C#/Db'
-            minorSeventh.textContent = 'D'
-            majorSeventh.textContent = 'D#/Eb'
-            octave.textContent = 'E'
-        break;
-        case 'F' :
-            minorSecond.textContent = 'F#/Gb'
-            majorSecond.textContent = 'G'      
-            minorThird.textContent = 'G#/Ab'
-            majorThird.textContent = dimForth.textContent = 'A'     
-            perfForth.textContent = 'A#/Bb'
-            augForth.textContent = dimFifth.textContent = 'B'    
-            perfFifth.textContent = 'C'
-            augFifth.textContent = minorSixth.textContent = 'C#/Db'    
-            majorSixth.textContent = 'D'
-            minorSeventh.textContent = 'D#/Eb'
-            majorSeventh.textContent = 'E' 
-            octave.textContent = 'F'
-        break;
-        case 'F#/Gb' :
-            minorSecond.textContent = 'G'
-            majorSecond.textContent = 'G#/Ab'       
-            minorThird.textContent = 'A'
-            majorThird.textContent = dimForth.textContent = 'A#/Bb'     
-            perfForth.textContent = 'B'
-            augForth.textContent = dimFifth.textContent = 'C'    
-            perfFifth.textContent = 'C#/Db'
-            augFifth.textContent = minorSixth.textContent = 'D'     
-            majorSixth.textContent = 'D#/Eb'
-            minorSeventh.textContent = 'E'
-            majorSeventh.textContent = 'F'
-            octave.textContent = 'F#/Gb'
-        break;
-        case 'G' :
-            minorSecond.textContent = 'G#/Ab'
-            majorSecond.textContent = 'A'        
-            minorThird.textContent = 'A#/Bb'
-            majorThird.textContent = dimForth.textContent = 'B'      
-            perfForth.textContent = 'C'
-            augForth.textContent = dimFifth.textContent = 'C#/Db'     
-            perfFifth.textContent = 'D'
-            augFifth.textContent = minorSixth.textContent = 'D#/Eb'      
-            majorSixth.textContent = 'E'
-            minorSeventh.textContent = 'F'
-            majorSeventh.textContent = 'F#/Gb'
-            octave.textContent = 'G'
-        break;
-        case 'G#/Ab' :
-            minorSecond.textContent = 'A'
-            majorSecond.textContent = 'A#/Bb'         
-            minorThird.textContent = 'B'
-            majorThird.textContent = dimForth.textContent = 'C'       
-            perfForth.textContent = 'C#/Db'
-            augForth.textContent = dimFifth.textContent = 'D'      
-            perfFifth.textContent = 'D#/Eb'
-            augFifth.textContent = minorSixth.textContent = 'E'       
-            majorSixth.textContent = 'F'
-            minorSeventh.textContent = 'F#/Gb'
-            majorSeventh.textContent = 'G'
-            octave.textContent = 'G#/Ab'
-        break;
-        default : 
-        console.log('Pick a key')
-    }
-} 
+const root = document.querySelector('#root');
+const octave = document.querySelector('#octave');
+const minorSecond = document.querySelector('#minor2');
+const minorThird = document.querySelector('#minor3');
+const minorSixth = document.querySelector('#minor6');
+const minorSeventh = document.querySelector('#minor7');
+const majorSecond = document.querySelector('#major2');
+const majorThird = document.querySelector('#major3');
+const majorSixth = document.querySelector('#major6');
+const majorSeventh = document.querySelector('#major7');
+const dimForth = document.querySelector('#diminished4');
+const dimFifth = document.querySelector('#diminished5');
+const perfForth = document.querySelector('#perfect4');
+const perfFifth = document.querySelector('#perfect5');
+const augForth = document.querySelector('#augmented4');
+const augFifth = document.querySelector('#augmented5');
+const instrument = document.querySelector('.instrumentsContainer');
+
+const buttonA = document.querySelector('#keyA');
+const buttonBb = document.querySelector('#keyBb');
+const buttonB = document.querySelector('#keyB');
+const buttonC = document.querySelector('#keyC');
+const buttonDb = document.querySelector('#keyDb');
+const buttonD = document.querySelector('#keyD');
+const buttonEb = document.querySelector('#keyEb');
+const buttonE = document.querySelector('#keyE');
+const buttonF = document.querySelector('#keyF');
+const buttonGb = document.querySelector('#keyGb');
+const buttonG = document.querySelector('#keyG');
+const buttonAb = document.querySelector('#keyAb');
+
+const ionian = document.querySelector('#modeIonian');
+const lydian = document.querySelector('#modeLydian');
+const mixolydian = document.querySelector('#modeMixolydian');
+const dorian = document.querySelector('#modeDorian');
+const phrygian = document.querySelector('#modePhrygian');
+const aeolian = document.querySelector('#modeAeolian');
+const locrian = document.querySelector('#modeLocrian');
+
+var modePicked = '';
+
 let displayMode = (mode) => {
-    modePicked = mode
-    switch(mode) {
-        case 'Ionian' :
-            root.style.backgroundColor = 'purple'
-            root.style.color = 'white'
-            minorSecond.style.backgroundColor = 'white'
-            minorSecond.style.color = 'black'
-            majorSecond.style.backgroundColor = 'purple'
-            majorSecond.style.color = 'white'
-            minorThird.style.backgroundColor = 'white'
-            minorThird.style.color = 'black'
-            majorThird.style.backgroundColor = 'purple'
-            majorThird.style.color = 'white'
-            dimForth.style.backgroundColor = 'white'
-            dimForth.style.color = 'black'
-            perfForth.style.backgroundColor = 'purple'
-            perfForth.style.color = 'white'
-            augForth.style.backgroundColor = 'white'
-            augForth.style.color = 'black'
-            dimFifth.style.backgroundColor = 'white'
-            dimFifth.style.color = 'black'
-            perfFifth.style.backgroundColor = 'purple'
-            perfFifth.style.color = 'white'
-            augFifth.style.backgroundColor = 'white'
-            augFifth.style.color = 'black'
-            minorSixth.style.backgroundColor = 'white'
-            minorSixth.style.color = 'black'
-            majorSixth.style.backgroundColor = 'purple'
-            majorSixth.style.color = 'white'
-            minorSeventh.style.backgroundColor = 'white'
-            minorSeventh.style.color = 'black'
-            majorSeventh.style.backgroundColor = 'purple'
-            majorSeventh.style.color = 'white'
-            octave.style.backgroundColor = 'purple'
-            octave.style.color = 'white'
-        break;
-        case 'Lydian' :
-            root.style.backgroundColor = 'purple'
-            root.style.color = 'white'
-            minorSecond.style.backgroundColor = 'white'
-            minorSecond.style.color = 'black'
-            majorSecond.style.backgroundColor = 'purple'
-            majorSecond.style.color = 'white'
-            minorThird.style.backgroundColor = 'white'
-            minorThird.style.color = 'black'
-            majorThird.style.backgroundColor = 'purple'
-            majorThird.style.color = 'white'
-            dimForth.style.backgroundColor = 'white'
-            dimForth.style.color = 'black'
-            perfForth.style.backgroundColor = 'white'
-            perfForth.style.color = 'black'
-            augForth.style.backgroundColor = 'purple'
-            augForth.style.color = 'white'
-            dimFifth.style.backgroundColor = 'white'
-            dimFifth.style.color = 'black'
-            perfFifth.style.backgroundColor = 'purple'
-            perfFifth.style.color = 'white'
-            augFifth.style.backgroundColor = 'white'
-            augFifth.style.color = 'black'
-            minorSixth.style.backgroundColor = 'white'
-            minorSixth.style.color = 'black'
-            majorSixth.style.backgroundColor = 'purple'
-            majorSixth.style.color = 'white'
-            minorSeventh.style.backgroundColor = 'white'
-            minorSeventh.style.color = 'black'
-            majorSeventh.style.backgroundColor = 'purple'
-            majorSeventh.style.color = 'white'
-            octave.style.backgroundColor = 'purple'
-            octave.style.color = 'white'
-        break;
-        case 'Mixolydian' :
-            root.style.backgroundColor = 'purple'
-            root.style.color = 'white'
-            minorSecond.style.backgroundColor = 'white'
-            minorSecond.style.color = 'black'
-            majorSecond.style.backgroundColor = 'purple'
-            majorSecond.style.color = 'white'
-            minorThird.style.backgroundColor = 'white'
-            minorThird.style.color = 'black'
-            majorThird.style.backgroundColor = 'purple'
-            majorThird.style.color = 'white'
-            dimForth.style.backgroundColor = 'white'
-            dimForth.style.color = 'black'
-            perfForth.style.backgroundColor = 'purple'
-            perfForth.style.color = 'white'
-            augForth.style.backgroundColor = 'white'
-            augForth.style.color = 'black'
-            dimFifth.style.backgroundColor = 'white'
-            dimFifth.style.color = 'black'
-            perfFifth.style.backgroundColor = 'purple'
-            perfFifth.style.color = 'white'
-            augFifth.style.backgroundColor = 'white'
-            augFifth.style.color = 'black'
-            minorSixth.style.backgroundColor = 'white'
-            minorSixth.style.color = 'black'
-            majorSixth.style.backgroundColor = 'purple'
-            majorSixth.style.color = 'white'
-            minorSeventh.style.backgroundColor = 'purple'
-            minorSeventh.style.color = 'white'
-            majorSeventh.style.backgroundColor = 'white'
-            majorSeventh.style.color = 'black'
-            octave.style.backgroundColor = 'purple'
-            octave.style.color = 'white'
-        break;
-        case 'Dorian' :
-            root.style.backgroundColor = 'purple'
-            root.style.color = 'white'
-            minorSecond.style.backgroundColor = 'white'
-            minorSecond.style.color = 'black'
-            majorSecond.style.backgroundColor = 'purple'
-            majorSecond.style.color = 'white'
-            minorThird.style.backgroundColor = 'purple'
-            minorThird.style.color = 'white'
-            majorThird.style.backgroundColor = 'white'
-            majorThird.style.color = 'black'
-            dimForth.style.backgroundColor = 'white'
-            dimForth.style.color = 'black'
-            perfForth.style.backgroundColor = 'purple'
-            perfForth.style.color = 'white'
-            augForth.style.backgroundColor = 'white'
-            augForth.style.color = 'black'
-            dimFifth.style.backgroundColor = 'white'
-            dimFifth.style.color = 'black'
-            perfFifth.style.backgroundColor = 'purple'
-            perfFifth.style.color = 'white'
-            augFifth.style.backgroundColor = 'white'
-            augFifth.style.color = 'black'
-            minorSixth.style.backgroundColor = 'white'
-            minorSixth.style.color = 'black'
-            majorSixth.style.backgroundColor = 'purple'
-            majorSixth.style.color = 'white'
-            minorSeventh.style.backgroundColor = 'purple'
-            minorSeventh.style.color = 'white'
-            majorSeventh.style.backgroundColor = 'white'
-            majorSeventh.style.color = 'black'
-            octave.style.backgroundColor = 'purple'
-            octave.style.color = 'white'
-        break;
-        case 'Phrygian' :
-            root.style.backgroundColor = 'purple'
-            root.style.color = 'white'
-            minorSecond.style.backgroundColor = 'purple'
-            minorSecond.style.color = 'white'
-            majorSecond.style.backgroundColor = 'white'
-            majorSecond.style.color = 'black'
-            minorThird.style.backgroundColor = 'purple'
-            minorThird.style.color = 'white'
-            majorThird.style.backgroundColor = 'white'
-            majorThird.style.color = 'black'
-            dimForth.style.backgroundColor = 'white'
-            dimForth.style.color = 'black'
-            perfForth.style.backgroundColor = 'purple'
-            perfForth.style.color = 'white'
-            augForth.style.backgroundColor = 'white'
-            augForth.style.color = 'black'
-            dimFifth.style.backgroundColor = 'white'
-            dimFifth.style.color = 'black'
-            perfFifth.style.backgroundColor = 'purple'
-            perfFifth.style.color = 'white'
-            augFifth.style.backgroundColor = 'white'
-            augFifth.style.color = 'black'
-            minorSixth.style.backgroundColor = 'purple'
-            minorSixth.style.color = 'white'
-            majorSixth.style.backgroundColor = 'white'
-            majorSixth.style.color = 'black'
-            minorSeventh.style.backgroundColor = 'purple'
-            minorSeventh.style.color = 'white'
-            majorSeventh.style.backgroundColor = 'white'
-            majorSeventh.style.color = 'black'
-            octave.style.backgroundColor = 'purple'
-            octave.style.color = 'white'
-        break;
-        case 'Aeolian' :
-            root.style.backgroundColor = 'purple'
-            root.style.color = 'white'
-            minorSecond.style.backgroundColor = 'white'
-            minorSecond.style.color = 'black'
-            majorSecond.style.backgroundColor = 'purple'
-            majorSecond.style.color = 'white'
-            minorThird.style.backgroundColor = 'purple'
-            minorThird.style.color = 'white'
-            majorThird.style.backgroundColor = 'white'
-            majorThird.style.color = 'black'
-            dimForth.style.backgroundColor = 'white'
-            dimForth.style.color = 'black'
-            perfForth.style.backgroundColor = 'purple'
-            perfForth.style.color = 'white'
-            augForth.style.backgroundColor = 'white'
-            augForth.style.color = 'black'
-            dimFifth.style.backgroundColor = 'white'
-            dimFifth.style.color = 'black'
-            perfFifth.style.backgroundColor = 'purple'
-            perfFifth.style.color = 'white'
-            augFifth.style.backgroundColor = 'white'
-            augFifth.style.color = 'black'
-            minorSixth.style.backgroundColor = 'purple'
-            minorSixth.style.color = 'white'
-            majorSixth.style.backgroundColor = 'white'
-            majorSixth.style.color = 'black'
-            minorSeventh.style.backgroundColor = 'purple'
-            minorSeventh.style.color = 'white'
-            majorSeventh.style.backgroundColor = 'white'
-            majorSeventh.style.color = 'black'
-            octave.style.backgroundColor = 'purple'
-            octave.style.color = 'white'
-        break;
-        case 'Locrian' :
-            root.style.backgroundColor = 'purple'
-            root.style.color = 'white'
-            minorSecond.style.backgroundColor = 'purple'
-            minorSecond.style.color = 'white'
-            majorSecond.style.backgroundColor = 'white'
-            majorSecond.style.color = 'black'
-            minorThird.style.backgroundColor = 'purple'
-            minorThird.style.color = 'white'
-            majorThird.style.backgroundColor = 'white'
-            majorThird.style.color = 'black'
-            dimForth.style.backgroundColor = 'white'
-            dimForth.style.color = 'black'
-            perfForth.style.backgroundColor = 'purple'
-            perfForth.style.color = 'white'
-            augForth.style.backgroundColor = 'white'
-            augForth.style.color = 'black'
-            dimFifth.style.backgroundColor = 'purple'
-            dimFifth.style.color = 'white'
-            perfFifth.style.backgroundColor = 'white'
-            perfFifth.style.color = 'black'
-            augFifth.style.backgroundColor = 'white'
-            augFifth.style.color = 'black'
-            minorSixth.style.backgroundColor = 'purple'
-            minorSixth.style.color = 'white'
-            majorSixth.style.backgroundColor = 'white'
-            majorSixth.style.color = 'black'
-            minorSeventh.style.backgroundColor = 'purple'
-            minorSeventh.style.color = 'white'
-            majorSeventh.style.backgroundColor = 'white'
-            majorSeventh.style.color = 'black'
-            octave.style.backgroundColor = 'purple'
-            octave.style.color = 'white'
-        break;
-    }
-}
-let displayGuitar = () => {
-    const guitar = document.createElement("div")
-    guitar.class = "guitar"
+	modePicked = mode;
+	switch (mode) {
+		case 'Ionian':
+			root.style.backgroundColor = 'purple';
+			root.style.color = 'white';
+			minorSecond.style.backgroundColor = 'white';
+			minorSecond.style.color = 'black';
+			majorSecond.style.backgroundColor = 'purple';
+			majorSecond.style.color = 'white';
+			minorThird.style.backgroundColor = 'white';
+			minorThird.style.color = 'black';
+			majorThird.style.backgroundColor = 'purple';
+			majorThird.style.color = 'white';
+			dimForth.style.backgroundColor = 'white';
+			dimForth.style.color = 'black';
+			perfForth.style.backgroundColor = 'purple';
+			perfForth.style.color = 'white';
+			augForth.style.backgroundColor = 'white';
+			augForth.style.color = 'black';
+			dimFifth.style.backgroundColor = 'white';
+			dimFifth.style.color = 'black';
+			perfFifth.style.backgroundColor = 'purple';
+			perfFifth.style.color = 'white';
+			augFifth.style.backgroundColor = 'white';
+			augFifth.style.color = 'black';
+			minorSixth.style.backgroundColor = 'white';
+			minorSixth.style.color = 'black';
+			majorSixth.style.backgroundColor = 'purple';
+			majorSixth.style.color = 'white';
+			minorSeventh.style.backgroundColor = 'white';
+			minorSeventh.style.color = 'black';
+			majorSeventh.style.backgroundColor = 'purple';
+			majorSeventh.style.color = 'white';
+			octave.style.backgroundColor = 'purple';
+			octave.style.color = 'white';
+			break;
+		case 'Lydian':
+			root.style.backgroundColor = 'purple';
+			root.style.color = 'white';
+			minorSecond.style.backgroundColor = 'white';
+			minorSecond.style.color = 'black';
+			majorSecond.style.backgroundColor = 'purple';
+			majorSecond.style.color = 'white';
+			minorThird.style.backgroundColor = 'white';
+			minorThird.style.color = 'black';
+			majorThird.style.backgroundColor = 'purple';
+			majorThird.style.color = 'white';
+			dimForth.style.backgroundColor = 'white';
+			dimForth.style.color = 'black';
+			perfForth.style.backgroundColor = 'white';
+			perfForth.style.color = 'black';
+			augForth.style.backgroundColor = 'purple';
+			augForth.style.color = 'white';
+			dimFifth.style.backgroundColor = 'white';
+			dimFifth.style.color = 'black';
+			perfFifth.style.backgroundColor = 'purple';
+			perfFifth.style.color = 'white';
+			augFifth.style.backgroundColor = 'white';
+			augFifth.style.color = 'black';
+			minorSixth.style.backgroundColor = 'white';
+			minorSixth.style.color = 'black';
+			majorSixth.style.backgroundColor = 'purple';
+			majorSixth.style.color = 'white';
+			minorSeventh.style.backgroundColor = 'white';
+			minorSeventh.style.color = 'black';
+			majorSeventh.style.backgroundColor = 'purple';
+			majorSeventh.style.color = 'white';
+			octave.style.backgroundColor = 'purple';
+			octave.style.color = 'white';
+			break;
+		case 'Mixolydian':
+			root.style.backgroundColor = 'purple';
+			root.style.color = 'white';
+			minorSecond.style.backgroundColor = 'white';
+			minorSecond.style.color = 'black';
+			majorSecond.style.backgroundColor = 'purple';
+			majorSecond.style.color = 'white';
+			minorThird.style.backgroundColor = 'white';
+			minorThird.style.color = 'black';
+			majorThird.style.backgroundColor = 'purple';
+			majorThird.style.color = 'white';
+			dimForth.style.backgroundColor = 'white';
+			dimForth.style.color = 'black';
+			perfForth.style.backgroundColor = 'purple';
+			perfForth.style.color = 'white';
+			augForth.style.backgroundColor = 'white';
+			augForth.style.color = 'black';
+			dimFifth.style.backgroundColor = 'white';
+			dimFifth.style.color = 'black';
+			perfFifth.style.backgroundColor = 'purple';
+			perfFifth.style.color = 'white';
+			augFifth.style.backgroundColor = 'white';
+			augFifth.style.color = 'black';
+			minorSixth.style.backgroundColor = 'white';
+			minorSixth.style.color = 'black';
+			majorSixth.style.backgroundColor = 'purple';
+			majorSixth.style.color = 'white';
+			minorSeventh.style.backgroundColor = 'purple';
+			minorSeventh.style.color = 'white';
+			majorSeventh.style.backgroundColor = 'white';
+			majorSeventh.style.color = 'black';
+			octave.style.backgroundColor = 'purple';
+			octave.style.color = 'white';
+			break;
+		case 'Dorian':
+			root.style.backgroundColor = 'purple';
+			root.style.color = 'white';
+			minorSecond.style.backgroundColor = 'white';
+			minorSecond.style.color = 'black';
+			majorSecond.style.backgroundColor = 'purple';
+			majorSecond.style.color = 'white';
+			minorThird.style.backgroundColor = 'purple';
+			minorThird.style.color = 'white';
+			majorThird.style.backgroundColor = 'white';
+			majorThird.style.color = 'black';
+			dimForth.style.backgroundColor = 'white';
+			dimForth.style.color = 'black';
+			perfForth.style.backgroundColor = 'purple';
+			perfForth.style.color = 'white';
+			augForth.style.backgroundColor = 'white';
+			augForth.style.color = 'black';
+			dimFifth.style.backgroundColor = 'white';
+			dimFifth.style.color = 'black';
+			perfFifth.style.backgroundColor = 'purple';
+			perfFifth.style.color = 'white';
+			augFifth.style.backgroundColor = 'white';
+			augFifth.style.color = 'black';
+			minorSixth.style.backgroundColor = 'white';
+			minorSixth.style.color = 'black';
+			majorSixth.style.backgroundColor = 'purple';
+			majorSixth.style.color = 'white';
+			minorSeventh.style.backgroundColor = 'purple';
+			minorSeventh.style.color = 'white';
+			majorSeventh.style.backgroundColor = 'white';
+			majorSeventh.style.color = 'black';
+			octave.style.backgroundColor = 'purple';
+			octave.style.color = 'white';
+			break;
+		case 'Phrygian':
+			root.style.backgroundColor = 'purple';
+			root.style.color = 'white';
+			minorSecond.style.backgroundColor = 'purple';
+			minorSecond.style.color = 'white';
+			majorSecond.style.backgroundColor = 'white';
+			majorSecond.style.color = 'black';
+			minorThird.style.backgroundColor = 'purple';
+			minorThird.style.color = 'white';
+			majorThird.style.backgroundColor = 'white';
+			majorThird.style.color = 'black';
+			dimForth.style.backgroundColor = 'white';
+			dimForth.style.color = 'black';
+			perfForth.style.backgroundColor = 'purple';
+			perfForth.style.color = 'white';
+			augForth.style.backgroundColor = 'white';
+			augForth.style.color = 'black';
+			dimFifth.style.backgroundColor = 'white';
+			dimFifth.style.color = 'black';
+			perfFifth.style.backgroundColor = 'purple';
+			perfFifth.style.color = 'white';
+			augFifth.style.backgroundColor = 'white';
+			augFifth.style.color = 'black';
+			minorSixth.style.backgroundColor = 'purple';
+			minorSixth.style.color = 'white';
+			majorSixth.style.backgroundColor = 'white';
+			majorSixth.style.color = 'black';
+			minorSeventh.style.backgroundColor = 'purple';
+			minorSeventh.style.color = 'white';
+			majorSeventh.style.backgroundColor = 'white';
+			majorSeventh.style.color = 'black';
+			octave.style.backgroundColor = 'purple';
+			octave.style.color = 'white';
+			break;
+		case 'Aeolian':
+			root.style.backgroundColor = 'purple';
+			root.style.color = 'white';
+			minorSecond.style.backgroundColor = 'white';
+			minorSecond.style.color = 'black';
+			majorSecond.style.backgroundColor = 'purple';
+			majorSecond.style.color = 'white';
+			minorThird.style.backgroundColor = 'purple';
+			minorThird.style.color = 'white';
+			majorThird.style.backgroundColor = 'white';
+			majorThird.style.color = 'black';
+			dimForth.style.backgroundColor = 'white';
+			dimForth.style.color = 'black';
+			perfForth.style.backgroundColor = 'purple';
+			perfForth.style.color = 'white';
+			augForth.style.backgroundColor = 'white';
+			augForth.style.color = 'black';
+			dimFifth.style.backgroundColor = 'white';
+			dimFifth.style.color = 'black';
+			perfFifth.style.backgroundColor = 'purple';
+			perfFifth.style.color = 'white';
+			augFifth.style.backgroundColor = 'white';
+			augFifth.style.color = 'black';
+			minorSixth.style.backgroundColor = 'purple';
+			minorSixth.style.color = 'white';
+			majorSixth.style.backgroundColor = 'white';
+			majorSixth.style.color = 'black';
+			minorSeventh.style.backgroundColor = 'purple';
+			minorSeventh.style.color = 'white';
+			majorSeventh.style.backgroundColor = 'white';
+			majorSeventh.style.color = 'black';
+			octave.style.backgroundColor = 'purple';
+			octave.style.color = 'white';
+			break;
+		case 'Locrian':
+			root.style.backgroundColor = 'purple';
+			root.style.color = 'white';
+			minorSecond.style.backgroundColor = 'purple';
+			minorSecond.style.color = 'white';
+			majorSecond.style.backgroundColor = 'white';
+			majorSecond.style.color = 'black';
+			minorThird.style.backgroundColor = 'purple';
+			minorThird.style.color = 'white';
+			majorThird.style.backgroundColor = 'white';
+			majorThird.style.color = 'black';
+			dimForth.style.backgroundColor = 'white';
+			dimForth.style.color = 'black';
+			perfForth.style.backgroundColor = 'purple';
+			perfForth.style.color = 'white';
+			augForth.style.backgroundColor = 'white';
+			augForth.style.color = 'black';
+			dimFifth.style.backgroundColor = 'purple';
+			dimFifth.style.color = 'white';
+			perfFifth.style.backgroundColor = 'white';
+			perfFifth.style.color = 'black';
+			augFifth.style.backgroundColor = 'white';
+			augFifth.style.color = 'black';
+			minorSixth.style.backgroundColor = 'purple';
+			minorSixth.style.color = 'white';
+			majorSixth.style.backgroundColor = 'white';
+			majorSixth.style.color = 'black';
+			minorSeventh.style.backgroundColor = 'purple';
+			minorSeventh.style.color = 'white';
+			majorSeventh.style.backgroundColor = 'white';
+			majorSeventh.style.color = 'black';
+			octave.style.backgroundColor = 'purple';
+			octave.style.color = 'white';
+			break;
+	}
+};
+let displayNotes = (key) => {
+	root.textContent = key;
+	for (let i = 0; i < arr.length; i++) {
+		if (key == arr[i].notes.root) {
+			minorSecond.textContent = arr[i].notes.minorSecond;
+			majorSecond.textContent = arr[i].notes.majorSecond;
+			minorThird.textContent = arr[i].notes.minorThird;
+			majorThird.textContent = arr[i].notes.majorThird;
+			dimForth.textContent = arr[i].notes.dimForth;
+			perfForth.textContent = arr[i].notes.perfForth;
+			augForth.textContent = arr[i].notes.augForth;
+			dimFifth.textContent = arr[i].notes.dimFifth;
+			perfFifth.textContent = arr[i].notes.perfFifth;
+			augFifth.textContent = arr[i].notes.augFifth;
+			minorSixth.textContent = arr[i].notes.minorSixth;
+			majorSixth.textContent = arr[i].notes.majorSixth;
+			minorSeventh.textContent = arr[i].notes.minorSeventh;
+			majorSeventh.textContent = arr[i].notes.majorSeventh;
+			octave.textContent = arr[i].notes.octave;
+		}
+	}
+};
+/* let displayGuitar = () => {
+	const guitar = document.createElement('div');
+	guitar.class = 'guitar';
 
-    instrument.append(guitar)
-}
-let displayBass = () => {
+	instrument.append(guitar);
+};
+let displayBass = () => {};
+let displayKeyboard = () => {}; */
 
-}
-let displayKeyboard = () => {
+let eventHandler = () => {
+	buttonA.onclick = () => {
+		displayNotes('A');
+	};
+	buttonBb.onclick = () => {
+		displayNotes('A#/Bb');
+	};
+	buttonB.onclick = () => {
+		displayNotes('B');
+	};
+	buttonC.onclick = () => {
+		displayNotes('C');
+	};
+	buttonDb.onclick = () => {
+		displayNotes('C#/Db');
+	};
+	buttonD.onclick = () => {
+		displayNotes('D');
+	};
+	buttonEb.onclick = () => {
+		displayNotes('D#/Eb');
+	};
+	buttonE.onclick = () => {
+		displayNotes('E');
+	};
+	buttonF.onclick = () => {
+		displayNotes('F');
+	};
+	buttonGb.onclick = () => {
+		displayNotes('F#/Gb');
+	};
+	buttonG.onclick = () => {
+		displayNotes('G');
+	};
+	buttonAb.onclick = () => {
+		displayNotes('G#/Ab');
+	};
+	ionian.onclick = () => {
+		displayMode('Ionian');
+	};
+	lydian.onclick = () => {
+		displayMode('Lydian');
+	};
+	mixolydian.onclick = () => {
+		displayMode('Mixolydian');
+	};
+	dorian.onclick = () => {
+		displayMode('Dorian');
+	};
+	phrygian.onclick = () => {
+		displayMode('Phrygian');
+	};
+	aeolian.onclick = () => {
+		displayMode('Aeolian');
+	};
+	locrian.onclick = () => {
+		displayMode('Locrian');
+	};
+};
 
-}
+displayMode('Lydian');
+displayNotes('F');
+eventHandler();

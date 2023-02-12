@@ -1,165 +1,210 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Scales.com</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style/style.css">
-	<link rel="icon" href="img/note.ico"/>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;1,100&display=swap" rel ="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://kit.fontawesome.com/e7591b0429.js" crossorigin="anonymous"></script>
-</head>
-<body>
-	<header>
-		<h1>SCALES.COM</h1>
-		<h2>Find the notes of the mode in the key you pick and display it on the fretboard</h2>
-	</header>
-	<main>
-		<h2 class="keyTitle">Pick a key</h2>
-		<div class="keyPick">
-			<button class="key" id="keyA" onclick="displayNotes('A')">A</button>
-			<button class="key" id="keyBb" onclick="displayNotes('A#/Bb')">A#/Bb</button>
-			<button class="key" id="keyB" onclick="displayNotes('B')">B</button>
-			<button class="key" id="keyC" onclick="displayNotes('C')">C</button>
-			<button class="key" id="keyDb" onclick="displayNotes('C#/Db')">C#/Db</button>
-			<button class="key" id="keyD" onclick="displayNotes('D')">D</button>
-			<button class="key" id="keyEb" onclick="displayNotes('D#/Eb')">D#/Eb</button>
-			<button class="key" id="keyE" onclick="displayNotes('E')">E</button>
-			<button class="key" id="keyF" onclick="displayNotes('F')">F</button>
-			<button class="key" id="keyGb" onclick="displayNotes('F#/Gb')">F#/Gb</button>
-			<button class="key" id="keyG" onclick="displayNotes('G')">G</button>
-			<button class="key" id="keyAb" onclick="displayNotes('G#/Ab')">G#/Ab</button>
-		</div>
-		<h2 class="modeTitle">Pick a mode</h2>
-		<div class="modePick">
-			<button class="mode modeMajor" id="modeIonian" onclick="displayMode('Ionian')">Ionian</button>
-			<button class="mode modeMajor" id="modeLydian" onclick="displayMode('Lydian')">Lydian</button>
-			<button class="mode modeMajor" id="modeMixolydian" onclick="displayMode('Mixolydian')">Mixolydian</button>
-			<button class="mode modeMinor" id="modeDorian" onclick="displayMode('Dorian')">Dorian</button>
-			<button class="mode modeMinor" id="modePhrygian" onclick="displayMode('Phrygian')">Phrygian</button>
-			<button class="mode modeMinor" id="modeAeolian" onclick="displayMode('Aeolian')">Aeolian</button>
-			<button class="mode modeMinor" id="modeLocrian" onclick="displayMode('Locrian')">Locrian</button>
-		</div>
-		<h2 class="instrumentTitle">Pick an instrument</h2>
-		<div class="instrumentPick">
-			<button class="instrument" id="guitar" onclick="displayGuitar()">Guitar fretboard</button>
-			<button class="instrument" id="bass" onclick="displayBass()">Bass fretboard</button>
-			<button class="instrument" id="keyboard" onclick="displayKeyboard()">Keyboard</button>
-		</div>
-		<div class="instrumentsContainer">
-			<div class="divTable">
-				<div class="divTableBody">
-					<div class="divTableRow">
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-					</div>
-					<div class="divTableRow">
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-					</div>
-					<div class="divTableRow">
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-					</div>
-					<div class="divTableRow">
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-					</div>
-					<div class="divTableRow">
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-					</div>
-					<div class="divTableRow">
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
-						<div class="divTableCell"></div>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Scales.com</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style/style.css" />
+		<link rel="icon" href="img/note.ico" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;1,100&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<script
+			src="https://kit.fontawesome.com/e7591b0429.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<header>
+			<h1>SCALES.COM</h1>
+			<h2>
+				Find the notes of the mode in the key you pick and display it on
+				the fretboard
+			</h2>
+		</header>
+		<main>
+			<h2 class="keyTitle">Pick a key</h2>
+			<div class="keyPick">
+				<button class="key" id="keyA">A</button>
+				<button class="key" id="keyBb">A#/Bb</button>
+				<button class="key" id="keyB">B</button>
+				<button class="key" id="keyC">C</button>
+				<button class="key" id="keyDb">C#/Db</button>
+				<button class="key" id="keyD">D</button>
+				<button class="key" id="keyEb">D#/Eb</button>
+				<button class="key" id="keyE">E</button>
+				<button class="key" id="keyF">F</button>
+				<button class="key" id="keyGb">F#/Gb</button>
+				<button class="key" id="keyG">G</button>
+				<button class="key" id="keyAb">G#/Ab</button>
+			</div>
+			<h2 class="modeTitle">Pick a mode</h2>
+			<div class="modePick">
+				<button class="mode modeMajor" id="modeIonian">Ionian</button>
+				<button class="mode modeMajor" id="modeLydian">Lydian</button>
+				<button class="mode modeMajor" id="modeMixolydian">
+					Mixolydian
+				</button>
+				<button class="mode modeMinor" id="modeDorian">Dorian</button>
+				<button class="mode modeMinor" id="modePhrygian">
+					Phrygian
+				</button>
+				<button class="mode modeMinor" id="modeAeolian">Aeolian</button>
+				<button class="mode modeMinor" id="modeLocrian">Locrian</button>
+			</div>
+			<h2 class="instrumentTitle">Pick an instrument</h2>
+			<div class="instrumentPick">
+				<button
+					class="instrument"
+					id="guitar"
+					onclick="displayGuitar()"
+				>
+					Guitar fretboard
+				</button>
+				<button class="instrument" id="bass" onclick="displayBass()">
+					Bass fretboard
+				</button>
+				<button
+					class="instrument"
+					id="keyboard"
+					onclick="displayKeyboard()"
+				>
+					Keyboard
+				</button>
+			</div>
+			<div class="instrumentsContainer">
+				<div class="divTable">
+					<div class="divTableBody">
+						<div class="divTableRow">
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+						</div>
+						<div class="divTableRow">
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+						</div>
+						<div class="divTableRow">
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+						</div>
+						<div class="divTableRow">
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+						</div>
+						<div class="divTableRow">
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+						</div>
+						<div class="divTableRow">
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- <div class="circlesWrapper">
-			<div class="circle" id="root"></div>
-			<div class="circle" id="minor2"></div>
-			<div class="circle" id="major2"></div>
-			<div class="circle" id="minor3"></div>
-			<div class="circle" id="major3"></div>
-			<div class="circle" id="diminished4"></div>
-			<div class="circle" id="perfect4"></div>
-			<div class="circle" id="augmented4"></div>
-			<div class="circle" id="diminished5"></div>
-			<div class="circle" id="perfect5"></div>
-			<div class="circle" id="augmented5"></div>
-			<div class="circle" id="minor6"></div>
-			<div class="circle" id="major6"></div>
-			<div class="circle" id="minor7"></div>
-			<div class="circle" id="major7"></div>
-			<div class="circle" id="octave"></div>
-		</div> -->
-	</main>
-	<footer>
-	</footer>
-	<script src="./js/app.js"></script>
-</body>
+			<div class="circlesWrapper">
+				<div class="circle" id="root"></div>
+				<div class="label" id="rootLabel">Root</div>
+				<div class="circle" id="minor2"></div>
+				<div class="label" id="m2Label">Minor second</div>
+				<div class="circle" id="major2"></div>
+				<div class="label" id="M2Label">Major second</div>
+				<div class="circle" id="minor3"></div>
+				<div class="label" id="m3Label">Minor third</div>
+				<div class="circle" id="major3"></div>
+				<div class="label" id="M3Label">Major third</div>
+				<div class="circle" id="diminished4"></div>
+				<div class="label" id="dim4Label">Diminished forth</div>
+				<div class="circle" id="perfect4"></div>
+				<div class="label" id="p4Label">Perfect forth</div>
+				<div class="circle" id="augmented4"></div>
+				<div class="label" id="aug4Label">Augmented forth</div>
+				<div class="circle" id="diminished5"></div>
+				<div class="label" id="dim5Label">Diminished fifth</div>
+				<div class="circle" id="perfect5"></div>
+				<div class="label" id="p5Label">Perfect fifth</div>
+				<div class="circle" id="augmented5"></div>
+				<div class="label" id="aug5Label">Augmented fifth</div>
+				<div class="circle" id="minor6"></div>
+				<div class="label" id="m6Label">Minor sixth</div>
+				<div class="circle" id="major6"></div>
+				<div class="label" id="M6Label">Major sixth</div>
+				<div class="circle" id="minor7"></div>
+				<div class="label" id="m7Label">Minor seventh</div>
+				<div class="circle" id="major7"></div>
+				<div class="label" id="M7Label">Major seventh</div>
+				<div class="circle" id="octave"></div>
+				<div class="label" id="OLabel">Octave</div>
+			</div>
+		</main>
+		<footer></footer>
+		<script type="module" src="./js/app.js"></script>
+	</body>
 </html>
