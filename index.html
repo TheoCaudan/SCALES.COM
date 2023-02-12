@@ -61,26 +61,17 @@
 			</div>
 			<h2 class="instrumentTitle">Pick an instrument</h2>
 			<div class="instrumentPick">
-				<button
-					class="instrument"
-					id="guitar"
-					onclick="displayGuitar()"
-				>
-					Guitar fretboard
-				</button>
-				<button class="instrument" id="bass" onclick="displayBass()">
-					Bass fretboard
-				</button>
-				<button
+				<button class="instrument" id="guitar">Guitar fretboard</button>
+				<button class="instrument" id="bass">Bass fretboard</button>
+				<!-- <button
 					class="instrument"
 					id="keyboard"
-					onclick="displayKeyboard()"
 				>
 					Keyboard
-				</button>
+				</button> -->
 			</div>
 			<div class="instrumentsContainer">
-				<div class="divTable">
+				<div class="divTable" id="guitarFretboard">
 					<div class="divTableBody">
 						<div class="divTableRow">
 							<div class="divTableCell"></div>
@@ -124,6 +115,128 @@
 							<div class="divTableCell"></div>
 							<div class="divTableCell"></div>
 						</div>
+						<div class="divTableRow">
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+						</div>
+						<div class="divTableRow">
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+							<div class="divTableCell"></div>
+						</div>
+					</div>
+					<div class="guitarStringsE">
+						<div class="guitarStringsNotes ENote"></div>
+						<div class="guitarStringsNotes FNote"></div>
+						<div class="guitarStringsNotes F#Note"></div>
+						<div class="guitarStringsNotes GNote"></div>
+						<div class="guitarStringsNotes G#Note"></div>
+						<div class="guitarStringsNotes ANote"></div>
+						<div class="guitarStringsNotes A#Note"></div>
+						<div class="guitarStringsNotes BNote"></div>
+						<div class="guitarStringsNotes CNote"></div>
+						<div class="guitarStringsNotes C#Note"></div>
+						<div class="guitarStringsNotes DNote"></div>
+						<div class="guitarStringsNotes D#Note"></div>
+						<div class="guitarStringsNotes ENote"></div>
+					</div>
+					<div class="guitarStringsA">
+						<div class="guitarStringsNotes ANote"></div>
+						<div class="guitarStringsNotes A#Note"></div>
+						<div class="guitarStringsNotes BNote"></div>
+						<div class="guitarStringsNotes CNote"></div>
+						<div class="guitarStringsNotes C#Note"></div>
+						<div class="guitarStringsNotes DNote"></div>
+						<div class="guitarStringsNotes D#Note"></div>
+						<div class="guitarStringsNotes ENote"></div>
+						<div class="guitarStringsNotes FNote"></div>
+						<div class="guitarStringsNotes F#Note"></div>
+						<div class="guitarStringsNotes GNote"></div>
+						<div class="guitarStringsNotes G#Note"></div>
+						<div class="guitarStringsNotes ANote"></div>
+					</div>
+					<div class="guitarStringsD">
+						<div class="guitarStringsNotes DNote"></div>
+						<div class="guitarStringsNotes D#Note"></div>
+						<div class="guitarStringsNotes ENote"></div>
+						<div class="guitarStringsNotes FNote"></div>
+						<div class="guitarStringsNotes F#Note"></div>
+						<div class="guitarStringsNotes GNote"></div>
+						<div class="guitarStringsNotes G#Note"></div>
+						<div class="guitarStringsNotes ANote"></div>
+						<div class="guitarStringsNotes A#Note"></div>
+						<div class="guitarStringsNotes BNote"></div>
+						<div class="guitarStringsNotes CNote"></div>
+						<div class="guitarStringsNotes C#Note"></div>
+						<div class="guitarStringsNotes DNote"></div>
+					</div>
+					<div class="guitarStringsG">
+						<div class="guitarStringsNotes GNote"></div>
+						<div class="guitarStringsNotes G#Note"></div>
+						<div class="guitarStringsNotes ANote"></div>
+						<div class="guitarStringsNotes A#Note"></div>
+						<div class="guitarStringsNotes BNote"></div>
+						<div class="guitarStringsNotes CNote"></div>
+						<div class="guitarStringsNotes C#Note"></div>
+						<div class="guitarStringsNotes DNote"></div>
+						<div class="guitarStringsNotes D#Note"></div>
+						<div class="guitarStringsNotes ENote"></div>
+						<div class="guitarStringsNotes FNote"></div>
+						<div class="guitarStringsNotes F#Note"></div>
+						<div class="guitarStringsNotes GNote"></div>
+					</div>
+					<div class="guitarStringsB">
+						<div class="guitarStringsNotes BNote"></div>
+						<div class="guitarStringsNotes CNote"></div>
+						<div class="guitarStringsNotes C#Note"></div>
+						<div class="guitarStringsNotes DNote"></div>
+						<div class="guitarStringsNotes D#Note"></div>
+						<div class="guitarStringsNotes ENote"></div>
+						<div class="guitarStringsNotes FNote"></div>
+						<div class="guitarStringsNotes F#Note"></div>
+						<div class="guitarStringsNotes GNote"></div>
+						<div class="guitarStringsNotes G#Note"></div>
+						<div class="guitarStringsNotes ANote"></div>
+						<div class="guitarStringsNotes A#Note"></div>
+						<div class="guitarStringsNotes BNote"></div>
+					</div>
+					<div class="guitarStringse">
+						<div class="guitarStringsNotes ENote"></div>
+						<div class="guitarStringsNotes FNote"></div>
+						<div class="guitarStringsNotes F#Note"></div>
+						<div class="guitarStringsNotes GNote"></div>
+						<div class="guitarStringsNotes G#Note"></div>
+						<div class="guitarStringsNotes ANote"></div>
+						<div class="guitarStringsNotes A#Note"></div>
+						<div class="guitarStringsNotes BNote"></div>
+						<div class="guitarStringsNotes CNote"></div>
+						<div class="guitarStringsNotes C#Note"></div>
+						<div class="guitarStringsNotes DNote"></div>
+						<div class="guitarStringsNotes D#Note"></div>
+						<div class="guitarStringsNotes ENote"></div>
+					</div>
+				</div>
+				<div class="divTable" id="bassFretboard">
+					<div class="divTableBody">
 						<div class="divTableRow">
 							<div class="divTableCell"></div>
 							<div class="divTableCell"></div>

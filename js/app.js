@@ -2,6 +2,7 @@ import scales from './scales.js';
 
 let arr = scales;
 
+// ==== Circles elements ==== //
 const root = document.querySelector('#root');
 const octave = document.querySelector('#octave');
 const minorSecond = document.querySelector('#minor2');
@@ -18,8 +19,9 @@ const perfForth = document.querySelector('#perfect4');
 const perfFifth = document.querySelector('#perfect5');
 const augForth = document.querySelector('#augmented4');
 const augFifth = document.querySelector('#augmented5');
-const instrument = document.querySelector('.instrumentsContainer');
 
+// ==== Buttons ==== //
+// = Keys = //
 const buttonA = document.querySelector('#keyA');
 const buttonBb = document.querySelector('#keyBb');
 const buttonB = document.querySelector('#keyB');
@@ -32,7 +34,7 @@ const buttonF = document.querySelector('#keyF');
 const buttonGb = document.querySelector('#keyGb');
 const buttonG = document.querySelector('#keyG');
 const buttonAb = document.querySelector('#keyAb');
-
+// = Modes = //
 const ionian = document.querySelector('#modeIonian');
 const lydian = document.querySelector('#modeLydian');
 const mixolydian = document.querySelector('#modeMixolydian');
@@ -40,11 +42,16 @@ const dorian = document.querySelector('#modeDorian');
 const phrygian = document.querySelector('#modePhrygian');
 const aeolian = document.querySelector('#modeAeolian');
 const locrian = document.querySelector('#modeLocrian');
+// = Instruments = //
+const guitar = document.querySelector('#guitar');
+const bass = document.querySelector('#bass');
 
-var modePicked = '';
+// ==== Instruments vizualisation ==== //
+const guitarFretboard = document.querySelector('#guitarFretboard');
+const bassFretboard = document.querySelector('#bassFretboard');
 
+// Highlights circles that contains the notes in the picked mode
 let displayMode = (mode) => {
-	modePicked = mode;
 	switch (mode) {
 		case 'Ionian':
 			root.style.backgroundColor = 'purple';
@@ -286,6 +293,8 @@ let displayMode = (mode) => {
 			break;
 	}
 };
+
+// Add note names in the circles
 let displayNotes = (key) => {
 	root.textContent = key;
 	for (let i = 0; i < arr.length; i++) {
@@ -308,15 +317,8 @@ let displayNotes = (key) => {
 		}
 	}
 };
-/* let displayGuitar = () => {
-	const guitar = document.createElement('div');
-	guitar.class = 'guitar';
 
-	instrument.append(guitar);
-};
-let displayBass = () => {};
-let displayKeyboard = () => {}; */
-
+// Handles every click on a button
 let eventHandler = () => {
 	buttonA.onclick = () => {
 		displayNotes('A');
@@ -374,6 +376,22 @@ let eventHandler = () => {
 	};
 	locrian.onclick = () => {
 		displayMode('Locrian');
+	};
+	guitar.onclick = () => {
+		if (guitarFretboard.style.display == 'none') {
+			guitarFretboard.style.display = 'table';
+			bassFretboard.style.display = 'none';
+		} else {
+			guitarFretboard.style.display = 'none';
+		}
+	};
+	bass.onclick = () => {
+		if (bassFretboard.style.display == 'none') {
+			bassFretboard.style.display = 'table';
+			guitarFretboard.style.display = 'none';
+		} else {
+			bassFretboard.style.display = 'none';
+		}
 	};
 };
 
