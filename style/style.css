@@ -291,3 +291,427 @@ footer p{
 .divTableRow {
 	display: flex;
 }
+.guitarStrings {
+	display: block;
+}
+.guitarStringsNotes {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	position: relative;
+}
+#E0,
+#A0,
+#D0,
+#G0,
+#B0,
+#e0 {
+	right: 35px;
+	position: relative;
+	border: solid 1px black;
+	background-color: white;
+}
+#E0 {
+	bottom: 15px;
+}
+#A0 {
+	bottom: 380px;
+}
+#D0 {
+	bottom: 750px;
+}
+#G0 {
+	bottom: 1120px;
+}
+#B0 {
+	bottom: 1490px;
+}
+#e0 {
+	bottom: 1860px;
+}
+#F1,
+#Bb2,
+#Eb3,
+#Ab4,
+#C5,
+#F6 {
+	left: 50px;
+}
+#Gb1,
+#B2,
+#E3,
+#A4,
+#Db5,
+#Gb6 {
+	left: 175px;
+}
+#G1,
+#C2,
+#F3,
+#Bb4,
+#D5,
+#G6 {
+	left: 295px;
+}
+#Ab1,
+#Db2,
+#Gb3,
+#B4,
+#Eb5,
+#Ab6 {
+	left: 420px;
+}
+#A1,
+#D2,
+#G3,
+#C4,
+#E5,
+#A6 {
+	left: 540px;
+}
+#Bb1,
+#Eb2,
+#Ab3,
+#Db4,
+#F5,
+#Bb6 {
+	left: 660px;
+}
+#B1,
+#E2,
+#A3,
+#D4,
+#Gb5,
+#B6 {
+	left: 780px;
+}
+#C1,
+#F2,
+#Bb3,
+#Eb4,
+#G5,
+#C6 {
+	left: 900px;
+}
+#Db1,
+#Gb2,
+#B3,
+#E4,
+#Ab5,
+#Db6 {
+	left: 1025px;
+}
+#D1,
+#G2,
+#C3,
+#F4,
+#A5,
+#D6 {
+	left: 1150px;
+}
+#Eb1,
+#Ab2,
+#Db3,
+#Gb4,
+#Bb5,
+#Eb6 {
+	left: 1270px;
+}
+#E1,
+#A2,
+#D3,
+#G4,
+#B5,
+#E6 {
+	left: 1390px;
+}
+#F1 {
+	bottom: 40px;
+}
+#Gb1 {
+	bottom: 65px;
+}
+#G1 {
+	bottom: 90px;
+}
+#Ab1 {
+	bottom: 115px;
+}
+#A1 {
+	bottom: 140px;
+}
+#Bb1 {
+	bottom: 165px;
+}
+#B1 {
+	bottom: 190px;
+}
+#C1 {
+	bottom: 215px;
+}
+#Db1 {
+	bottom: 240px;
+}
+#D1 {
+	bottom: 265px;
+}
+#Eb1 {
+	bottom: 290px;
+}
+#E1 {
+	bottom: 315px;
+}
+#Bb2 {
+	bottom: 410px;
+}
+#B2 {
+	bottom: 435px;
+}
+#C2 {
+	bottom: 460px;
+}
+#Db2 {
+	bottom: 485px;
+}
+#D2 {
+	bottom: 510px;
+}
+#Eb2 {
+	bottom: 535px;
+}
+#E2 {
+	bottom: 560px;
+}
+#F2 {
+	bottom: 585px;
+}
+#Gb2 {
+	bottom: 610px;
+}
+#G2 {
+	bottom: 635px;
+}
+#Ab2 {
+	bottom: 660px;
+}
+#A2 {
+	bottom: 685px;
+}
+#Eb3 {
+	bottom: 779px;
+}
+#E3 {
+	bottom: 804px;
+}
+#F3 {
+	bottom: 829px;
+}
+#Gb3 {
+	bottom: 854px;
+}
+#G3 {
+	bottom: 879px;
+}
+#Ab3 {
+	bottom: 904px;
+}
+#A3 {
+	bottom: 929px;
+}
+#Bb3 {
+	bottom: 954px;
+}
+#B3 {
+	bottom: 979px;
+}
+#C3 {
+	bottom: 1004px;
+}
+#Db3 {
+	bottom: 1029px;
+}
+#D3 {
+	bottom: 1054px;
+}
+#Ab4 {
+	bottom: 1148px;
+}
+#A4 {
+	bottom: 1173px;
+}
+#Bb4 {
+	bottom: 1198px;
+}
+#B4 {
+	bottom: 1223px;
+}
+#C4 {
+	bottom: 1248px;
+}
+#Db4 {
+	bottom: 1273px;
+}
+#D4 {
+	bottom: 1298px;
+}
+#Eb4 {
+	bottom: 1323px;
+}
+#E4 {
+	bottom: 1348px;
+}
+#F4 {
+	bottom: 1373px;
+}
+#Gb4 {
+	bottom: 1398px;
+}
+#G4 {
+	bottom: 1423px;
+}
+#C5 {
+	bottom: 1517px;
+}
+#Db5 {
+	bottom: 1542px;
+}
+#D5 {
+	bottom: 1567px;
+}
+#Eb5 {
+	bottom: 1592px;
+}
+#E5 {
+	bottom: 1617px;
+}
+#F5 {
+	bottom: 1642px;
+}
+#Gb5 {
+	bottom: 1667px;
+}
+#G5 {
+	bottom: 1692px;
+}
+#Ab5 {
+	bottom: 1717px;
+}
+#A5 {
+	bottom: 1742px;
+}
+#Bb5 {
+	bottom: 1767px;
+}
+#B5 {
+	bottom: 1792px;
+}
+#F6 {
+	bottom: 1885px;
+}
+#Gb6 {
+	bottom: 1910px;
+}
+#G6 {
+	bottom: 1935px;
+}
+#Ab6 {
+	bottom: 1960px;
+}
+#A6 {
+	bottom: 1985px;
+}
+#Bb6 {
+	bottom: 2010px;
+}
+#B6 {
+	bottom: 2035px;
+}
+#C6 {
+	bottom: 2060px;
+}
+#Db6 {
+	bottom: 2085px;
+}
+#D6 {
+	bottom: 2110px;
+}
+#Eb6 {
+	bottom: 2135px;
+}
+#E6 {
+	bottom: 2160px;
+}
+#E1,
+#E2,
+#E3,
+#E4,
+#E5,
+#E6,
+#F1,
+#F2,
+#F3,
+#F4,
+#F5,
+#F6,
+#Gb1,
+#Gb2,
+#Gb3,
+#Gb4,
+#Gb5,
+#Gb6,
+#G1,
+#G2,
+#G3,
+#G4,
+#G5,
+#G6,
+#Ab1,
+#Ab2,
+#Ab3,
+#Ab4,
+#Ab5,
+#Ab6,
+#A1,
+#A2,
+#A3,
+#A4,
+#A5,
+#A6,
+#Bb1,
+#Bb2,
+#Bb3,
+#Bb4,
+#Bb5,
+#Bb6,
+#B1,
+#B2,
+#B3,
+#B4,
+#B5,
+#B6,
+#C1,
+#C2,
+#C3,
+#C4,
+#C5,
+#C6,
+#Db1,
+#Db2,
+#Db3,
+#Db4,
+#Db5,
+#Db6,
+#D1,
+#D2,
+#D3,
+#D4,
+#D5,
+#D6,
+#Eb1,
+#Eb2,
+#Eb3,
+#Eb4,
+#Eb5,
+#Eb6 {
+	background-color: black;
+}
